@@ -1,0 +1,22 @@
+{
+  "name": "swiggy",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "Sandeep Yadav",
+  "type": "commonjs",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@tailwindcss/postcss": "^4.3.1",
+    "lucide-react": "^1.22.0",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "tailwindcss": "^4.3.1"
+  },
+  "devDependencies": {
+    "parcel": "^2.16.4",
+    "process": "^0.11.10"
+  }
+}
