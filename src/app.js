@@ -7,7 +7,7 @@ import ReactDOM from "react-dom/client";
 import Restaurant from "./Component/Restaurant";
 import {BrowserRouter, Routes, Route} from "react-router";
 import Home from "./Component/Home";
-import ReataurantMenu from "./Component/RestaurantMenu";
+import RestaurantMenu from "./Component/RestaurantMenu";
 
 
 // header section
