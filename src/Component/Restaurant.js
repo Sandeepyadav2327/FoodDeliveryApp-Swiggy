@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import RestCard from "./RestCard";
+import Shimmer from "./Shimmer";
 
 export default function Restaurant(){
    
@@ -13,7 +14,7 @@ export default function Restaurant(){
         const swiggyAPI = "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.7040592&lng=77.10249019999999&is-seo-homepage-enabled=true";
         const response = await fetch(proxyServer+swiggyAPI);
         const data = await response.json();
-        setRestData(data.data.cards[1].card.card.gridElements.infoWithStyle.restaurants);
+        setRestData(data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
      }
 
      fetchData();
@@ -21,11 +22,17 @@ export default function Restaurant(){
 
     // console.log(RestData);
 
+    // Shimmer Effect 
+    if(RestData.length==0){
+        // return <h1 className="flex flex-wrap w-[80%] mx-auto mt-20 gap-5"> </h1>
+        <Shimmer/>
+    }
+
     return (
         <div className="flex flex-wrap w-[80%] mx-auto mt-20 gap-5">
             
             {
-                RestData.map((restInfo)=><RestCard key={restInfo.info.id} restInfo={restInfo}></RestCard>)
+                RestData.map((restInfo)=><RestCard key={restInfo?.info?.id} restInfo={restInfo}></RestCard>)
             }
 
         </div>
